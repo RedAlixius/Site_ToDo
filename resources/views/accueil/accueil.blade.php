@@ -5,7 +5,7 @@
 @endsection
 
 @section('titrePage')
-    <h1>Liste des liens</h1>
+    <h1>Accueil</h1>
 
 
 @endsection

@@ -4,7 +4,7 @@ use App\Http\Controllers\Controller;
 use App\Link;
 use Illuminate\Support\Facades\Request;
 
-class ControllerLink extends Controller{
+class ControllerTask extends Controller{
 
     public function accueil(){
         return view('accueil/Accueil');
@@ -12,6 +12,18 @@ class ControllerLink extends Controller{
 
     public function createAccount(){
         return view('account/createAccount');
+    }
+
+    public function viewListe(){
+        return view('liste/viewliste');
+    }
+
+    public function createListe(){
+        return view('liste/createListe');
+    }
+
+    public function about(){
+        return view('about/about');
     }
 
     public function viewTask(){
@@ -26,20 +38,6 @@ class ControllerLink extends Controller{
         $link->description=$param['description'];
         $link->save();
         var_dump($param);*/
-        return redirect()->route('task/viewTask');
-    }
-
-    public function getForm()
-    {
-        return view('account/createAccount');
-    }
-
-    public function postForm(UserRequest $request)
-    {
-        $user = new User;
-        $user->email = $request->input('createAccount');
-        $user->save();
-
-        return view('account_ok');
+        return view('task/createTask');
     }
 }
