@@ -49,17 +49,17 @@ Route::post("/createTask", function(){
 
 Route::get('/',[
     'as'=>'accueil',
-    'uses'=>'ControllerLink@accueil'
+    'uses'=>'ControllerTask@accueil'
 ]);
 
 Route::get('/createAccount',[
     'as'=>'createAccount',
-    'uses'=>'ControllerLink@createAccount'
+    'uses'=>'ControllerTask@createAccount'
 ]);
 
 Route::get('/viewTask',[
     'as'=>'viewTask',
-    'uses'=>'ControllerLink@viewTask'
+    'uses'=>'ControllerTask@viewTask'
 ]);
 
 
@@ -68,4 +68,4 @@ Route::get('/createTask',[
     'uses'=>'ControllerLink@createTask'
 ]);
 
-//Route::controller('email', 'ControllerTask');
+//Route::get('/createAccount', 'ControllerTask');

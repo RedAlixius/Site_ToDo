@@ -31,15 +31,15 @@ class ControllerLink extends Controller{
 
     public function getForm()
     {
-        return view('email');
+        return view('account/createAccount');
     }
 
-    public function postForm(EmailRequest $request)
+    public function postForm(UserRequest $request)
     {
-        $email = new Email;
-        $email->email = $request->input('email');
-        $email->save();
+        $user = new User;
+        $user->email = $request->input('createAccount');
+        $user->save();
 
-        return view('email_ok');
+        return view('account_ok');
     }
 }
