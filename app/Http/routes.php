@@ -15,19 +15,51 @@
     return view('welcome');
 });*/
 
-//Route::controller('createAccount', AccountController);
 
-Route::get('/',[
+
+get('/',[
     'as'=>'accueil',
-    'uses'=>'ControllerTask@accueil'
+    'uses'=>'HomeController@accueil'
 ]);
 
-Route::get('/createAccount',[
+get('/about',[
+    'as'=>'about',
+    'uses'=>'HomeController@about'
+]);
+
+get ('/createAccount',[
     'as'=>'createAccount',
-    'uses'=>'ControllerTask@createAccount'
+    'uses'=>'AccountController@createAccount'
 ]);
 
-Route::get('/viewTask',[
+Route::controller('createAccount', 'AccountController');
+
+/*get('/account_ok','AccountController@getForm');
+
+post('/account_ok','AccountController@postForm');*/
+
+/*post("/createAccount/form", function(){
+    $rules = [
+        'first_name'    => 'required',
+        'last_name'     => 'required',
+        'email'         => 'required|email',
+        'password'      => 'required|confirmed',
+    ];
+
+    $validator = Validator::make(Input::all(),$rules);
+
+    if ($validator->fails())
+    {
+        return Redirect::to('/createAccount')->withInput()->withErrors($validator);
+    }
+    return view('account/account_ok');
+});*/
+
+
+
+
+
+get('/viewTask',[
     'as'=>'viewTask',
     'uses'=>'ControllerTask@viewTask'
 ]);
@@ -48,27 +80,7 @@ Route::get('/createTask',[
     'uses'=>'ControllerTask@createTask'
 ]);
 
-Route::get('/about',[
-    'as'=>'about',
-    'uses'=>'ControllerTask@about'
-]);
 
-Route::post("/createAccount/form", function(){
-    $rules = [
-        'first_name'    => 'required',
-        'last_name'     => 'required',
-        'email'         => 'required|email',
-        'password'      => 'required|confirmed',
-    ];
-
-    $validator = Validator::make(Input::all(),$rules);
-
-    if ($validator->fails())
-    {
-        return Redirect::to('/createAccount')->withInput()->withErrors($validator);
-    }
-    return view('account/account_ok');
-});
 
 Route::post("/createTask", function(){
     $rules = [

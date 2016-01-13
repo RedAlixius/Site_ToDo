@@ -6,9 +6,7 @@ use Illuminate\Support\Facades\Request;
 
 class ControllerTask extends Controller{
 
-    public function accueil(){
-        return view('accueil/Accueil');
-    }
+
 
     public function createAccount(){
         return view('account/createAccount');
@@ -22,9 +20,6 @@ class ControllerTask extends Controller{
         return view('liste/createListe');
     }
 
-    public function about(){
-        return view('about/about');
-    }
 
     public function viewTask(){
         return view('task/viewTask');

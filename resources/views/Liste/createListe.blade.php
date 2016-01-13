@@ -1,11 +1,11 @@
 @extends('../master')
 
 @section('titre')
-    Ajout d'une t‚che
+    Ajout d'une t√¢che
 @endsection
 
 @section('titrePage')
-    <h1>Ajouter une t‚che</h1>
+    <h1>Ajouter une t√¢che</h1>
     @endsection
 
     @section('contenu')
@@ -14,7 +14,7 @@
             <label for="name">Nom : </label>
             <input type="text" name="name" id="name" placeholder="Tapez votre nom"/>
             <br/>
-            <label for="date">Date d'ÈchÈance : </label>
+            <label for="date">Date d'√©ch√©ance : </label>
             <input type="date" name="date" id="date" placeholder="Tapez votre lien"/>
             <br>
             <label for="description">Description : </label>
@@ -28,7 +28,7 @@
         <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Ajouter une t‚che</h3>
+                    <h3 class="panel-title">Ajouter une t√¢che</h3>
                 </div>
                 <div class="panel-body">
                     @if(Session::get('errors'))

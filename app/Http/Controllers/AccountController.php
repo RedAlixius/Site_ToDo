@@ -1,11 +1,15 @@
 <?php
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
-use App\Link;
-use Illuminate\Support\Facades\Request;
-
-class ControllerTask extends Controller
+use App\User;
+use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
+class AccountController extends Controller
 {
+
+    public function createAccount(){
+        return view('account/createAccount');
+    }
 
     public function getForm()
     {
@@ -15,9 +19,9 @@ class ControllerTask extends Controller
     public function postForm(UserRequest $request)
     {
         $user = new User;
-        $user->email = $request->input('createAccount');
+        $user->email = $request->input('email');
         $user->save();
 
-        return view('account_ok');
+        return view('account/account_ok');
     }
 }

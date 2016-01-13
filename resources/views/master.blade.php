@@ -31,8 +31,8 @@
             <ul class="nav navbar-nav navbar-">
                 <li><a href="{!! route('createAccount') !!}">Créer un compte</a></li>
                 <li><a href="{!! route('viewListe') !!}">Voir mes listes</a></li>
-                <li><a href="{!! route('createListe') !!}">Créer une liste</a></li>
-                <!---<li><a href="{!! route('viewTask') !!}">Voir mes tâches</a></li>
+                <!---createAccount<li><a href="{!! route('createListe') !!}">Créer une liste</a></li>
+                <li><a href="{!! route('viewTask') !!}">Voir mes tâches</a></li>
                 <li><a href="{!! route('createTask') !!}">Créer une tâche</a></li>
                 -->
             </ul>
