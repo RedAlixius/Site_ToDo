@@ -67,3 +67,5 @@ Route::get('/createTask',[
     'as'=>'createTask',
     'uses'=>'ControllerLink@createTask'
 ]);
+
+//Route::controller('email', 'ControllerTask');
