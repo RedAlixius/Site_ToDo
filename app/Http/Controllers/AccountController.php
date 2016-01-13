@@ -16,10 +16,12 @@ class AccountController extends Controller
         return view('account/createAccount');
     }
 
-    public function postForm(UserRequest $request)
+    public function postForm(UserRequest $request, User $user)
     {
-        $user = new User;
+        $user->first_name = $request->input('first_name');
+        $user->last_name = $request->input('last_name');
         $user->email = $request->input('email');
+        $user->password = $request->input('password');
         $user->save();
 
         return view('account/account_ok');
