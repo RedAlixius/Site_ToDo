@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/resources/views/Liste/viewListe.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/account/account_ok.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/account/createAccount.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/account/loginAccount.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/accueil/accueil.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/master.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/task/createTask.blade.php" charset="UTF-8" />

@@ -27,12 +27,16 @@ get('/about',[
     'uses'=>'HomeController@about'
 ]);
 
-get ('/createAccount',[
+
+
+
+
+/*get ('/createAccount',[
     'as'=>'createAccount',
     'uses'=>'AccountController@createAccount'
-]);
+]);*/
 
-Route::controller('createAccount', 'AccountController');
+//Route::controller('createAccount', 'AccountController');
 
 /*get('/account_ok','AccountController@getForm');
 
@@ -96,3 +100,36 @@ Route::post("/createTask", function(){
     }
     return 'Form passed validation!';
 });
+
+Route::get('home', '\Bestmomo\Scafold\Http\Controllers\HomeController@index');
+
+// Authentication routes...
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+get('/loginAccount',[
+    'as'=>'login',
+    'uses'=>'Auth\AuthController@getLogin'
+]);
+
+post('/loginAccount',[
+    'as'=>'login',
+    'uses'=>'Auth\AuthController@postLogin'
+]);
+
+
+// Registration routes...
+get('/createAccount',[
+    'as'=>'createAccount',
+    'uses'=>'Auth\AuthController@getRegister'
+]);
+post('/createAccount',[
+    'as'=>'createAccount',
+    'uses'=>'Auth\AuthController@postRegister'
+]);
+// Password reset link request routes...
+Route::get('password/email', 'Auth\PasswordController@getEmail');
+Route::post('password/email', 'Auth\PasswordController@postEmail');
+
+// Password reset routes...
+Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+Route::post('password/reset', 'Auth\PasswordController@postReset');

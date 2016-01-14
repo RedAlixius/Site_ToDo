@@ -18,16 +18,27 @@
                     <h3 class="panel-title">Enregistrez-vous ! <small> C'est gratuit !</small></h3>
                 </div>
                 <div class="panel-body">
-                    @if(Session::get('errors'))
-                        <div class="alert alert-danger alert-dismissable">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
-                            <h5>Il y a eu des erreurs durant l'enregistration:</h5>
-                            @foreach($errors->all('<li>:message</li>') as $message)
-                                {!! $message !!}
-                            @endforeach
-                        </div>
-                    @endif
-                    {!!  Form::open(['url' => '/createAccount/form']) !!}
+                        @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                                <!--@if(Session::get('errors'))
+                                <div class="alert alert-danger alert-dismissable">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+                                    <h5>Il y a eu des erreurs durant l'enregistration:</h5>
+                                    @foreach($errors->all('<li>:message</li>') as $message)
+                        {!! $message !!}
+                        @endforeach
+                                </div>
+                            @endif --><!--/auth/register-->
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/createAccount') }}">
+                            {!! csrf_field() !!}
                     <div class="row">
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">

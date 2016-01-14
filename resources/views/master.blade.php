@@ -29,15 +29,33 @@
         </div>
        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-">
-                <li><a href="{!! route('createAccount') !!}">Créer un compte</a></li>
-                <li><a href="{!! route('viewListe') !!}">Voir mes listes</a></li>
+
+
                 <!---createAccount<li><a href="{!! route('createListe') !!}">Créer une liste</a></li>
+                <li><a href="{!! route('createAccount') !!}">Créer un compte</a></li>
                 <li><a href="{!! route('viewTask') !!}">Voir mes tâches</a></li>
                 <li><a href="{!! route('createTask') !!}">Créer une tâche</a></li>
                 -->
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{!! route('about') !!}">A propos</a></li>
+
+                @if(auth()->guest())
+                    @if(!Request::is('loginAccount'))
+                        <li><a href="{{ url('loginAccount') }}">Login</a></li>
+                    @endif
+                    @if(!Request::is('createAccount'))
+                        <li><a href="{{ url('createAccount') }}">Register</a></li>
+                    @endif
+                @else
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ auth()->user()->name }} <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{!! route('viewListe') !!}">Voir mes listes</a></li>
+                            <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
+                        </ul>
+                    </li>
+                @endif
+                    <li><a href="{!! route('about') !!}">A propos</a></li>
             </ul>
         </div>
     </div>
