@@ -11,5 +11,5 @@
 @endsection
 
 @section('contenu')
-   bka
+    <div id="description">Bienvenue sur la page d'accueil de la liste des tâches</div>
 @endsection
