@@ -15,6 +15,10 @@ class AccountController extends Controller
         return view('account/loginAccount');
     }
 
+    public function loge(){
+        return view('account/login_ok');
+    }
+
     public function getForm()
     {
         return view('account/createAccount');

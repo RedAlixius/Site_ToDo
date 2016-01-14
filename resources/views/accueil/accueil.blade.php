@@ -6,8 +6,6 @@
 
 @section('titrePage')
     <h1>Accueil</h1>
-
-
 @endsection
 
 @section('contenu')
