@@ -48,7 +48,7 @@
                     @endif
                 @else
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ auth()->user()->name }} <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ auth()->user()->first_name }} <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{!! route('viewListe') !!}">Voir mes listes</a></li>
                             <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
@@ -60,14 +60,6 @@
         </div>
     </div>
 </nav>
-   <!-- <div id="menu">
-        <ul>
-            <li><a href="">accueil</a></li>
-            <li><a href="">Créer un compte</a></li>
-            <li><a href="">Voir mes tâches</a></li>
-            <li><a href="{{route('createTask')}}">Ajouter une nouvelle tâche</a></li>
-        </ul>
-    </div>-->
 <div class="centre">
     @yield('titrePage','Titre par défaut')
 </div>
