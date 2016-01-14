@@ -11,12 +11,6 @@
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
-
-
-
 get('/',[
     'as'=>'accueil',
     'uses'=>'HomeController@accueil'
@@ -26,10 +20,6 @@ get('/about',[
     'as'=>'about',
     'uses'=>'HomeController@about'
 ]);
-
-
-
-
 
 /*get ('/createAccount',[
     'as'=>'createAccount',
@@ -85,7 +75,7 @@ Route::get('/createTask',[
 ]);
 
 
-
+/*
 Route::post("/createTask", function(){
     $rules = [
         'nameTask'  => 'required',
@@ -99,12 +89,19 @@ Route::post("/createTask", function(){
         return Redirect::to('/createTask')->withInput()->withErrors($validator);
     }
     return 'Form passed validation!';
-});
+});*/
 
-Route::get('home', '\Bestmomo\Scafold\Http\Controllers\HomeController@index');
+get('/login_ok', [
+    'as'=>'login_ok',
+    'uses'=>'AccountController@loge'
+]);
+
+post('/loginAccount',[
+    'as'=>'login',
+    'uses'=>'Auth\AuthController@postLogin'
+]);
 
 // Authentication routes...
-Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 get('/loginAccount',[
     'as'=>'login',
@@ -116,20 +113,23 @@ post('/loginAccount',[
     'uses'=>'Auth\AuthController@postLogin'
 ]);
 
+get('logout', 'Auth\AuthController@getLogout');
 
 // Registration routes...
 get('/createAccount',[
     'as'=>'createAccount',
     'uses'=>'Auth\AuthController@getRegister'
 ]);
+
 post('/createAccount',[
     'as'=>'createAccount',
     'uses'=>'Auth\AuthController@postRegister'
 ]);
+
 // Password reset link request routes...
-Route::get('password/email', 'Auth\PasswordController@getEmail');
-Route::post('password/email', 'Auth\PasswordController@postEmail');
+get('password/email', 'Auth\PasswordController@getEmail');
+post('password/email', 'Auth\PasswordController@postEmail');
 
 // Password reset routes...
-Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
-Route::post('password/reset', 'Auth\PasswordController@postReset');
+get('password/reset/{token}', 'Auth\PasswordController@getReset');
+post('password/reset', 'Auth\PasswordController@postReset');
