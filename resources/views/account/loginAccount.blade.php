@@ -51,7 +51,7 @@
                 </div>
             </div>
             <div class="text-center">
-                <a href="{!! route('createAccount') !!}" >Vous n'avez pas encore de compte? Enregistrez-vous !</a>
+                <a href="{!! route('createAccount') !!}" >Vous n'avez pas encore de compte ? Enregistrez-vous !</a>
             </div>
         </div>
     </div>

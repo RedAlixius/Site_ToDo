@@ -34,10 +34,10 @@
             <ul class="nav navbar-nav navbar-right">
                 @if(auth()->guest())
                     @if(!Request::is('loginAccount'))
-                        <li><a href="{{ url('loginAccount') }}">Login</a></li>
+                        <li><a href="{{ url('loginAccount') }}">Se connecter</a></li>
                     @endif
                     @if(!Request::is('createAccount'))
-                        <li><a href="{{ url('createAccount') }}">Register</a></li>
+                        <li><a href="{{ url('createAccount') }}">S'enregistrer</a></li>
                     @endif
                 @else
                     <li class="dropdown">
@@ -51,7 +51,7 @@
                         </ul>
                     </li>
                 @endif
-                    <li><a href="{!! route('about') !!}">A propos</a></li>
+                    <li><a href="{!! route('about') !!}">À propos</a></li>
             </ul>
         </div>
     </div>

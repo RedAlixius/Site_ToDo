@@ -32,6 +32,10 @@ li
 	text-align: center;
 }
 
+#description{
+	color:white;
+}
+
 /*
 .navbar .navbar-inner {
 	padding: 0;
