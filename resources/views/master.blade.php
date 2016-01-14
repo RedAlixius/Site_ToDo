@@ -41,21 +41,21 @@
 
                 @if(auth()->guest())
                     @if(!Request::is('loginAccount'))
-                        <li><a href="{{ url('loginAccount') }}">Login</a></li>
+                        <li><a href="{{ url('loginAccount') }}">Se connecter</a></li>
                     @endif
                     @if(!Request::is('createAccount'))
-                        <li><a href="{{ url('createAccount') }}">Register</a></li>
+                        <li><a href="{{ url('createAccount') }}">S'enregistrer</a></li>
                     @endif
                 @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ auth()->user()->first_name }} <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{!! route('viewListe') !!}">Voir mes listes</a></li>
-                            <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
+                            <li><a href="{{ url('/auth/logout') }}">Se déconnecter</a></li>
                         </ul>
                     </li>
                 @endif
-                    <li><a href="{!! route('about') !!}">A propos</a></li>
+                    <li><a href="{!! route('about') !!}">À propos</a></li>
             </ul>
         </div>
     </div>
