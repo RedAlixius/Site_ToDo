@@ -70,7 +70,6 @@
                     </div>
 
                     {!! Form::submit('S\'enregistrer', array('class'=>'btn btn-info btn-block')) !!}
-
                     {!! Form::close() !!}
                 </div>
             </div>

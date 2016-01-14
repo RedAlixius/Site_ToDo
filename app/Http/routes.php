@@ -113,7 +113,7 @@ post('/loginAccount',[
     'uses'=>'Auth\AuthController@postLogin'
 ]);
 
-get('logout', 'Auth\AuthController@getLogout');
+get('/logout', 'Auth\AuthController@getLogout');
 
 // Registration routes...
 get('/createAccount',[

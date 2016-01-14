@@ -32,7 +32,6 @@
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
-
                 @if(auth()->guest())
                     @if(!Request::is('loginAccount'))
                         <li><a href="{{ url('loginAccount') }}">Login</a></li>

@@ -11,5 +11,5 @@
 @endsection
 
 @section('contenu')
-   bka
+
 @endsection
